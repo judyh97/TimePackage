@@ -12,15 +12,15 @@ tz_conversion <- function(city2, city1 = Sys.timezone(), time = Sys.time()) {
   if ((missing(city1) && !missing(time)) | (!missing(city1) && missing(time))) {
     stop("time and source-time city must be specified together, if any", call. = FALSE)
   }
-
+  
   else if (missing(city1) && missing(time)) {
     tz1 = Sys.timezone()
   }
-
+  
   else {
     tz1 = city_tz(city1)
   }
-
+  
   tz2 = city_tz(city2)
   time_1 = as.POSIXct(time, tz1)
   time_2 = format(time_1, tz = tz2, usetz = TRUE)

@@ -9,12 +9,12 @@
 #' @export
 city_tz <- function(city) {
   city_lower = tolower(city)
-
+  
   if (city_lower %in% City_Zone$City == FALSE) {
     stop("City name not recognized. Check spelling and that spaces are indicated by underscores.
          Otherwise, city does not exist in database", call. = FALSE)
   }
-
+  
   index = which(City_Zone$City == city_lower)[1]
   return(City_Zone$Zone[index])
-}
+  }
