@@ -10,7 +10,9 @@
 #' flight_duration("2017-08-20 10:30", "Asia/Hong_Kong")
 #' @export
 options(warn = -1)
-flight_duration <- function(arrival_time, arrival_tz, departure_time = Sys.time(), departure_tz = Sys.timezone()) {
+flight_duration <- function(arrival_time, arrival_city, departure_time, departure_city) {
+  arrival_tz = city_tz(arrival_city)
+  departure_tz = city_tz(departure_city)
   DepTime <- format(as.POSIXct(departure_time, tz = departure_tz), tz = arrival_tz, usetz = TRUE)
   ArrTime <- format(as.POSIXct(arrival_time, tz = arrival_tz), tz = arrival_tz, usetz = TRUE)
   as.POSIXct(ArrTime) - as.POSIXct(DepTime)
