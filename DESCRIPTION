@@ -1,11 +1,16 @@
 Package: TimePackage2
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Functions to convert timezones and calculate flight time 
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
-Encoding: UTF-8
-LazyData: true
+Authors@R: c(person("Gates", "Cao", email = "jialeicao2017@u.northwestern.edu", role = c("aut", "cre")), 
+             person("Judy", "Hong", email = "judyhong@sas.upenn.edu", role = c("aut", "cre")),
+             person("Megan", "Dickson", email = "megan_dickson@rocketmail.com", role = c("aut", "cre")))
+Description: Contains 3 functions: 1) city_tz, 2) tz_conversion, 3) flight_conversion
+             1) converts the name of a city (input) to its associated timezone (output)
+             2) converts a specified time in specified city A (default = current system time and tz) to the time at specified city B
+             3) given the arrival and departure time and locations (input), calculates flight duration (output)
+License: GPL-3
+Depends: R (>= 2.10)
+LazyData: TRUE
+Suggests: testthat
+RoxygenNote: 6.0.1

@@ -1,18 +1,28 @@
-#' Timezone conversion. Converts your current system time to the time of your city of interest.
+#' Timezone_conversion converts a specified time in city1 to the time in city2.
 #'
-#' @param tz_2 Timezone 2
-#' @param tz_1 Timezone 1
-#' @param time Time
-#' @return Time converted
+#' @param city2 name of city the user wants time to be converted to
+#' @param city1 name of source time city. Default is system timezone
+#' @param time time of source time city, format YYYY-MM-DD HH:MM:SS. Default is system time
+#' @return time in desired city
 #' @examples
-#' tz_conversion("Asia/Hong_Kong", "Europe/Rome", "2017-08-20 9:00")
-#' tz_conversion("Asia/Hong_Kong")
+#' tz_conversion("Singapore")
+#' tz_conversion("Cape_Town", "Singapore", "2017-07-03 20:00:00")
 #' @export
-options(warn = -1)
-tz_conversion <- function(city, tz_1 = Sys.timezone(), time = Sys.time()) {
-  tz_2 = city_tz(city)
-  t1 <- as.POSIXct(time, tz = tz_1)
-  format(t1, tz = tz_2, usetz = TRUE)
+tz_conversion <- function(city2, city1 = Sys.timezone(), time = Sys.time()) {
+  if ((missing(city1) && !missing(time)) | (!missing(city1) && missing(time))) {
+    stop("time and source-time city must be specified together, if any", call. = FALSE)
+  }
+
+  else if (missing(city1) && missing(time)) {
+    tz1 = Sys.timezone()
+  }
+
+  else {
+    tz1 = city_tz(city1)
+  }
+
+  tz2 = city_tz(city2)
+  time_1 = as.POSIXct(time, tz1)
+  time_2 = format(time_1, tz = tz2, usetz = TRUE)
+  return(time_2)
 }
-
-

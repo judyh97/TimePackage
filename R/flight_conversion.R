@@ -1,15 +1,13 @@
-#' Calculate flight duration.
+#' Calculate flight duration, given departure and arrival details.
 #'
-#' @param arrival_time Arrival time at the destination.
-#' @param arrival_tz Timezone of the destination.
-#' @param departure_time Departure time at the origin.
-#' @param departure_tz Timezone of the origin.
-#' @return Time elapsed between the departure time and arrival time in the timezone of the destination.
+#' @param arrival_time Arrival time at the destination
+#' @param arrival_city Destination city
+#' @param departure_time Departure time at the origin
+#' @param departure_city Origin city
+#' @return Total flight time (time elapsed between the departure and arrival time)
 #' @examples
-#' flight_duration("2017-08-20 10:30", "Asia/Hong_Kong", "2017-08-19 09:00", "Africa/Johannesburg")
-#' flight_duration("2017-08-20 10:30", "Asia/Hong_Kong")
+#' flight_duration("2017-08-20 10:30", "Hong_Kong", "2017-08-19 09:00", "Johannesburg")
 #' @export
-options(warn = -1)
 flight_duration <- function(arrival_time, arrival_city, departure_time, departure_city) {
   arrival_tz = city_tz(arrival_city)
   departure_tz = city_tz(departure_city)
