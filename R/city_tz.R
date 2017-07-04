@@ -7,6 +7,7 @@
 #' city_tz("Cape_Town") gives "Africa/Johannesburg"
 #'
 #' @export
+load('data/City_Zone.rda')
 city_tz <- function(city) {
   city_lower = tolower(city)
   
