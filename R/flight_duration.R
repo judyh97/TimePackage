@@ -1,8 +1,8 @@
 #' Calculate flight duration, given departure and arrival details.
 #'
-#' @param arrival_time Arrival time at the destination
+#' @param arrival_time Arrival time at the destination. Format YYYY-MM-DD HH:MM:SS
 #' @param arrival_city Destination city
-#' @param departure_time Departure time at the origin
+#' @param departure_time Departure time at the origin. Format YYYY-MM-DD HH:MM:SS
 #' @param departure_city Origin city
 #' @return Total flight time (time elapsed between the departure and arrival time)
 #' @examples
