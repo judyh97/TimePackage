@@ -7,11 +7,11 @@
 flight_duration(arrival_time, arrival_city, departure_time, departure_city)
 }
 \arguments{
-\item{arrival_time}{Arrival time at the destination}
+\item{arrival_time}{Arrival time at the destination. Format YYYY-MM-DD HH:MM:SS}
 
 \item{arrival_city}{Destination city}
 
-\item{departure_time}{Departure time at the origin}
+\item{departure_time}{Departure time at the origin. Format YYYY-MM-DD HH:MM:SS}
 
 \item{departure_city}{Origin city}
 }
