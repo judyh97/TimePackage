@@ -8,7 +8,6 @@
 #'
 #' @export
 city_tz <- function(city) {
-  load('data/City_Zone.rda')
   city_lower = tolower(city)
   
   if (city_lower %in% City_Zone$City == FALSE) {
