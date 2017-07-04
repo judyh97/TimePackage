@@ -13,5 +13,5 @@ flight_duration <- function(arrival_time, arrival_city, departure_time, departur
   departure_tz = city_tz(departure_city)
   DepTime <- format(as.POSIXct(departure_time, tz = departure_tz), tz = arrival_tz, usetz = TRUE)
   ArrTime <- format(as.POSIXct(arrival_time, tz = arrival_tz), tz = arrival_tz, usetz = TRUE)
-  as.POSIXct(ArrTime) - as.POSIXct(DepTime)
+  paste(as.character(as.numeric(difftime(as.POSIXct(ArrTime), as.POSIXct(DepTime)), units = "hours")), "hours", sep=" ")
 }
