@@ -3,8 +3,8 @@ Type: Package
 Title: Functions to convert timezones and calculate flight time 
 Version: 0.1.0
 Authors@R: c(person("Gates", "Cao", email = "jialeicao2017@u.northwestern.edu", role = c("aut", "cre")), 
-             person("Judy", "Hong", email = "judyhong@sas.upenn.edu", role = "ctb"),
-             person("Megan", "Dickson", email = "megan_dickson@rocketmail.com", role = "ctb"))
+             person("Judy", "Hong", email = "judyhong@sas.upenn.edu", role = "aut", "cre"),
+             person("Megan", "Dickson", email = "megan_dickson@rocketmail.com", role = "aut", "cre"))
 Description: Contains 3 functions: 1) city_tz, 2) tz_conversion, 3) flight_conversion
              1) converts the name of a city (input) to its associated timezone (output)
              2) converts a specified time in specified city A (default = current system time and tz) to the time at specified city B
