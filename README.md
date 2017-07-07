@@ -1,5 +1,5 @@
 # TimePackage
-An R package that convert timezones and calculate flight durations
+An R package that convert timezones and calculate flight durations.
 ## Installation 
 You can install TimePackage from GitHub with:
 
